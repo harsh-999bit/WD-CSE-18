@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Java Script</h1>
+
+    <script>
+        // JS Variable data value types
+
+        // primitive : immutable single value and stores in memory
+
+        // string 
+
+        var myName = "Harsh";
+        console.log("My Name is " + myName);
+        console.log(typeof (myName));
+
+        // number
+        var myMob = 7836723798129;
+        console.log("My Mobile no is " + myMob);
+        console.log(typeof (myMob));
+
+        // boolean
+        var isMarried = false;
+        console.log(myName + " is married ?" + isMarried);
+        console.log(typeof (isMarried));
+
+        // undefined
+        var myAdd;
+        console.log(myName + "address is " + myAdd);
+        console.log(typeof (myAdd));
+
+        // null
+
+        var myEmail = null;
+        console.log(myName + " e-mail address is " + myEmail);
+        console.log(typeof (myEmail));
+
+        //biginit
+
+        var myValue = BigInt(123456789009876543212345678901234567);
+        console.log(myValue);
+        console.log(typeof (myValue));
+
+        //symbol
+
+        var val1 = Symbol("hello");
+        var val2 = Symbol("hello");
+        console.log(val1 == val2);
+        console.log(typeof (val1) + " and " + typeof (val2));
+
+        // reference and non-primitive data value types
+        //object {} - values are defined in paired of key value 
+        let myInfo = {
+            name: "Harsh ",
+            age: 19,
+            mob: 987654321,
+            email: "xyz@gmail.com",
+            isMarried : false,
+            address : null,
+            branch : "CSE",
+            Section : 18
+        };
+        console.log(myInfo);
+        console.log(Object.keys(myInfo).length); // to find the length of object
+        console.log(myInfo.Section);
+
+        // array - collection of any data types in JS
+
+        let studentdetails = ["Harsh" , 24 , false ,"xyz@gmail.com" , "ghaziabad" ]
+        console.log(studentdetails[3]);
+        console.log(studentdetails.length);
+
+        for(i = 0 ; i < studentdetails . length ; i++){
+            console.log(studentdetails[i]);
+        }
+
+        // function - represent a block of code
+
+        function myCal(){
+            let num1 = 7 ;
+            let num2 = 19 ; 
+            let result = num1 + num2 ;
+            console.log("Addition of two Number is " + ( num1 + num2));
+            console.log(result);
+        }
+        myCal();
+
+</script>
+</body>
+
+</html>
