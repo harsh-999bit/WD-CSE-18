@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS object</title>
+</head>
+
+<body>
+    <h1>Java Script Object</h1>
+    <script>
+        let myInfo = {
+            name: "Harsh",
+            age: 19,
+            ismarried: false,
+            address: {
+                streerNo: 2,
+                area: "Vijay Nagar",
+                pincode: 201009,
+                city: "GZB"
+            },
+            course: "B.Tech",
+            branch: "CSE",
+            year: 2025,
+            // education:function(){
+            // //     return console.log()
+            // },
+        }
+        console.log(myInfo.education);
+        console.log(myInfo.address.city);
+        console.log(myInfo["name"]);
+
+        // console.log(Object.keys(myInfo).length);
+
+        let keys = Object.keys(myInfo);
+        console.log(keys.length);
+
+        // for (i = 0; i < myInfo.length; i++) {
+        //     console.log(keys.length);
+        // }
+
+
+        // let info=["Harsh", 22,"xyz@gmail.com", false, "ghaziabad"]
+        // console.log(info.length);
+
+
+        //delete object property
+
+        console.log(delete myInfo.name);
+        console.log(myInfo);
+
+        //object's property using for loop
+        for(let i =0; i<keys.length; i++){
+            // console.log("Object keys are " + myInfo[keys[i]]);
+            console.log(keys[i] + ":" + myInfo[keys[i]]);
+        }
+
+        //object's property using for in loop
+
+        for(let x in myInfo){
+            console.log(myInfo[x]);
+        }
+
+        // create object using new keyword
+        let student = new Object(); 
+        
+        student.name = "harsh";
+        student.age = 25;
+        student.course = "B.Tech";
+        student.address = "Ghaziabad";
+        student.isMarried = false;
+        
+        console.log(student.name);
+
+    </script>
+</body>
+
+</html>
