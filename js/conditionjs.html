@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>condition in js </title>
+</head>
+
+<body>
+    <script>
+        //conditional statment JavaScript provides several ways to execute different blocks of code based on whether a condition is true or false
+        let age = 33;
+        // if(age>=18){
+        //     console.log("Valid age for vote casting")
+        // }
+        //if....else
+        if (age >= 18) {
+            console.log("Valid age");
+        }
+        else {
+            console.log("Not valid age");
+        }
+        //switch case......
+        let _Grade = 'A';
+        switch (_Grade) {
+            case 'A': result = ("First Division ");
+                break;
+            case 'B': result = ("Second Division ");
+                break;
+            case 'C': result = ("Third  Division ");
+                break;
+            default: result = "Fail";
+        }
+        console.log(result);
+        let marks = 65;
+        if (marks >= 60) {
+            console.log("First Division Marks");
+
+        }
+        else if (marks < 60 && marks > 35) {
+            console.log("Second Divison Marks");
+
+        }
+        else if (marks < 40 && marks >= 33) {
+            console.log("Third division marks ");
+
+        }
+        else {
+            console.log("Fail");
+        }
+        
+        let averageMarks;
+        let studentMarks = [89, 78, 23, 56, 89];
+
+        let sum = 0;
+
+        for (let i = 0; i < studentMarks.length; i++) {
+            sum += studentMarks[i];
+        }
+
+        averageMarks = sum / studentMarks.length;
+
+        if (averageMarks > 90) {
+            console.log("First Position");
+        }
+        else if (averageMarks < 90 && averageMarks >= 70) {
+            console.log("Second position");
+        }
+        else{
+            console.log("third position")
+        }
+        console.log("Average Marks:", averageMarks);
+    </script>
+</body>
+
+</html>
