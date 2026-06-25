@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeForge</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #111827;
+      padding: 20px;
+      border-right: 1px solid #1e293b;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .logo-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logo-box img {
+      width: 140px;
+    }
+
+    .files h3 {
+      color: #f59e0b;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .file {
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #1e293b;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .file:hover {
+      background: #f59e0b;
+      color: black;
+    }
+
+    .active-file {
+      background: #f59e0b;
+      color: black;
+      font-weight: bold;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tabs {
+      display: flex;
+      align-items: center;
+      background: #111827;
+      border-bottom: 1px solid #1e293b;
+      padding-right: 10px;
+    }
+
+    .tab {
+      padding: 15px 25px;
+      cursor: pointer;
+      color: #cbd5e1;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      background: #1e293b;
+    }
+
+    .active-tab {
+      background: #1e293b;
+      color: #f59e0b;
+      border-bottom: 3px solid #f59e0b;
+    }
+
+    .workspace {
+      flex: 1;
+      display: flex;
+    }
+
+    .editor {
+      width: 60%;
+      background: #0b1220;
+      border-right: 2px solid #1e293b;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      background: #0b1220;
+      color: #f8fafc;
+      border: none;
+      outline: none;
+      resize: none;
+      padding: 20px;
+      font-size: 15px;
+      line-height: 1.6;
+      font-family: monospace;
+    }
+
+    .preview {
+      width: 40%;
+      background: white;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    textarea::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    textarea::-webkit-scrollbar-thumb {
+      background: #f59e0b;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div>
+        <div class="logo-box">
+          <img src="logo.png" alt="CodeForge" />
+        </div>
+
+        <div class="files">
+          <h3>FILES</h3>
+          <div class="file active-file">📄 index.html</div>
+          <div class="file">🎨 style.css</div>
+          <div class="file">⚡ script.js</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="tabs">
+        <div class="tab active-tab">index.html</div>
+        <div class="tab">style.css</div>
+        <div class="tab">script.js</div>
+
+        
+      </div>
+
+      <div class="workspace">
+        <div class="editor">
+          <textarea id="code">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading</title>
+</head>
+<body>
+    
+</body>
+</html>   
+
+</textarea>
+        </div>
+
+        <div class="preview">
+          <iframe id="output"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const code = document.getElementById("code");
+    const output = document.getElementById("output");
+
+    function runCode() {
+      output.srcdoc = code.value;
+    }
+
+    code.addEventListener("keyup", runCode);
+    runCode();
+  </script>
+</body>
+
+</html>
